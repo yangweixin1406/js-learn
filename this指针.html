@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function logName() {
+        console.log(this.name);
+    }
+    function doFun1(fn) {
+        fn();
+    }
+    function doFun2(o) {
+        o.logName();
+    }
+    var obj = {
+        name: 'Lilei',  //obj
+        logName: logName
+    };
+    var name = "Hanmeimei";   //windows
+    doFun1(obj.logName);
+    doFun2(obj);
+</script>
+</body>
+</html>

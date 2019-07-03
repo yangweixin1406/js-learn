@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr = [5,5,9,8,16,23,7,2];
+
+    // //冒泡排序算法1
+    // function bubbleSort(array) {
+    //     for (var i=0;i<array.length;i++){
+    //         for (var j=0;j<array.length-1-i;j++){
+    //             if(array[j]>array[j+1]){
+    //                 var temp = array[j+1];
+    //                 array[j+1] = array[j];
+    //                 array[j] = temp;
+    //             }
+    //         }
+    //     }
+    //     return array;
+    // }
+
+    //改进冒泡排序
+    function bubbleSort1(a){
+        console.time('改进后的冒泡排序耗时');
+        var i = a.length - 1;  //初始时，最后位置保持不变
+        while (i>0){
+            var pos = 0;   //每趟开始时，无记录交换
+            for (var j=0;j<i;j++){
+                pos = j;
+                if(a[j]>a[j+1]){
+                    var temp = a[j];
+                    a[j] = a[j+1];
+                    a[j+1] = temp;
+                }
+            }
+            i = pos;  //为下一趟排序做准备
+        }
+        console.timeEnd('改进后冒泡排序耗时');
+        return a;
+    }
+    console.log(bubbleSort1(arr));
+</script>
+</body>
+</html>

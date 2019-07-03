@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function filteredArray(arr, elem) {
+        let newArr = [];
+        // 请把你的代码写在这条注释以下
+        var len = arr.length;
+        for (var i = 0; i < len; i++) {
+            if (arr[i].indexOf(elem) === -1) {
+                newArr.push(arr[i]);
+            }
+        }
+        // 请把你的代码写在这条注释以上
+        return newArr;
+    }
+
+    // 你可以修改这行代码来测试不同的输入：
+    console.log(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3));
+    console.log(filteredArray([[10, 8, 3], [14, 6, 23], [3, 18, 6]], 18));
+</script>
+
+</body>
+</html>

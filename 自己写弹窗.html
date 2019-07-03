@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .selectBox{
+            display: none;
+            width: 800px;
+            height: 600px;
+            background: white;
+            position:fixed;
+            top: 10%;
+            left: 25%;
+            z-index: 100;
+        }
+        .shelter{
+            display: none;
+            width: 100%;
+            height: 100%;
+            position:fixed;
+            top: 0;
+            left: 0;
+            background: rgba(15, 10, 15, 0.3);
+            z-index: 99;
+        }
+        ul{
+            width: 600px;
+            height: 400px;
+            margin: 100px auto;
+            list-style: none;
+            padding-top: 50px;
+        }
+        ul>li{
+            width: 100%;
+            height: 50px;
+            margin-left: 150px;
+        }
+        li>span{
+            text-align: center;
+            line-height: 50px;
+        }
+        .cancel{
+            position:absolute;
+            bottom: 50px;
+            left: 390px;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+<p>https://www.baidu.com/s?wd=csdn&rsv_spt=1&rsv_ <br>
+    iqid=0xcff3907f000269f2&issp=1&f=8&rsv_bp=0&rsv_idx=<br>
+    2&ie=utf-8&tn=baiduhome_pg&rsv_enter=1&rsv_sug3=<br>
+    3&rsv_sug1=3&rsv_sug7=101 <br>
+    iqid=0xcff3907f000269f2&issp=1&f=8&rsv_bp=0&rsv_idx=<br>
+    iqid=0xcff3907f000269f2&issp=1&f=8&rsv_bp=0&rsv_idx=<br>
+    iqid=0xcff3907f000269f2&issp=1&f=8&rsv_bp=0&rsv_idx=<br>
+    iqid=0xcff3907f000269f2&issp=1&f=8&rsv_bp=0&rsv_idx=<br>
+    iqid=0xcff3907f000269f2&issp=1&f=8&rsv_bp=0&rsv_idx=<br>
+    iqid=0xcff3907f000269f2&issp=1&f=8&rsv_bp=0&rsv_idx=<br>
+    iqid=0xcff3907f000269f2&issp=1&f=8&rsv_bp=0&rsv_idx=<br>
+    iqid=0xcff3907f000269f2&issp=1&f=8&rsv_bp=0&rsv_idx=<br>
+    iqid=0xcff3907f000269f2&issp=1&f=8&rsv_bp=0&rsv_idx=<br>
+    iqid=0xcff3907f000269f2&issp=1&f=8&rsv_bp=0&rsv_idx=<br>
+    iqid=0xcff3907f000269f2&issp=1&f=8&rsv_bp=0&rsv_idx=<br>
+</p>
+<input type="button" id="button" value="点击我">
+<div id="selectBox" class="selectBox">
+    <ul>
+        <li><span>你确定自己不需要查看一下我吗？<a href="#123">查看</a></span></li>
+        <li><span>你确定自己不需要查看一下我吗？<a href="#456">查看</a></span></li>
+        <li><span>你确定自己不需要查看一下我吗？<a href="#789">查看</a></span></li>
+        <li><span>你确定自己不需要查看一下我吗？<a href="#755">查看</a></span></li>
+        <li><span>你确定自己不需要查看一下我吗？<a href="#99">查看</a></span></li>
+    </ul>
+    <button class="cancel">关闭窗口</button>
+</div>
+<div  id="shelter" class="shelter"></div>
+
+<script>
+    var btn = document.getElementById('button');
+    var selectBox = document.getElementById('selectBox');
+    var shelter = document.getElementById('shelter');
+    var cancel = document.getElementsByClassName('cancel')[0];
+    btn.onclick = function () {
+        selectBox.style.display = 'block';
+        shelter.style.display = 'block';
+    };
+    cancel.onclick = function () {
+        selectBox.style.display = 'none';
+        shelter.style.display = 'none';
+    };
+</script>
+</body>
+</html>

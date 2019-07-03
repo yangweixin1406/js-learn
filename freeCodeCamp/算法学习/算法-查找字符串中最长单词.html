@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function findLongestWordLength(str) {
+        var arr = str.split(" ");
+
+        //自己的写法，有点愚蠢，复杂。
+        // var maxIndex;
+        // for(var i=0;i<arr.length - 1;i++){
+        //     maxIndex = i;
+        //     for(var j=1;j<arr.length;j++){
+        //         if(arr[j].length > arr[maxIndex].length){
+        //             maxIndex = j;
+        //         }
+        //     }
+        //     return arr[maxIndex].length;
+        // }
+
+        var maxLength = 0;
+        for(var i=0;i<arr.length;i++){
+            if(arr[i].length > maxLength){
+                maxLength = arr[i].length;
+            }
+        }
+        return maxLength;
+
+    }
+
+    console.log(findLongestWordLength("The quick brown fox jumped over the lazy dog"));
+</script>
+
+</body>
+</html>

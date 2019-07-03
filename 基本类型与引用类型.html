@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var name = 'Lilei';
+    var people = {
+        name : 'Hanmeimei'
+    };
+    function test1(name) {
+        name = 'LaoWang';
+    }
+    function test2(obj) {
+        obj.name = 'LaoWang';
+    }
+    test1(name);   //Lilei
+    test2(people);  //LaoWang
+    console.log("name     "+name);
+    console.log("name     "+people.name);
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function fun(something) {
+        console.log(this.name,something);
+    }
+    function bindFun(fn,obj) {    //绑定时间，改变this指向
+        return function () {
+            return fn.apply(obj,arguments);
+        }
+    }
+    var obj = {
+        name : 'Lilei'
+    };
+    var bar = bindFun(fun,obj);  //fun方法 this 指向obj
+    var b = bar('Hanmeimei');
+    console.log(b);   //Lilei,Hanmeimei   undefined    //因为bar未返回东西，所以为undefined
+</script>
+</body>
+</html>

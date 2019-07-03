@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function logName() {
+        console.log(this);
+        console.log(this.name);
+    }
+    var name = "XiaoMing";   //window
+    var Lilei = {
+        name : 'Lilei',      //对象Lilei
+        logName : logName
+    };
+    var Hanmeimei = {
+        name : 'Hanmeimei'   //对象 Hanmeimei
+    };
+    (Hanmeimei.logName = Lilei.logName)();
+</script>
+</body>
+</html>

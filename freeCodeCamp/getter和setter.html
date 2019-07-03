@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function makeClass() {
+        "use strict";
+        /* 请把你的代码写在这条注释以下 */
+        class Thermostat{
+            constructor (warn){
+                this.warn = 5/9 * (warn - 32);
+            }
+            get temperature(){
+                return this.warn;
+            }
+            set temperature(updateTemperature){
+                this.warn = updateTemperature;
+            }
+        }
+        /* 请把你的代码写在这条注释以上 */
+        return Thermostat;
+    }
+    const Thermostat = makeClass();
+    const thermos = new Thermostat(76); // 使用华氏温度来初始化
+    let temp = thermos.temperature; // 摄氏温度24.44度
+    console.log(temp);
+    thermos.temperature = 26;
+    temp = thermos.temperature; // 摄氏温度26度
+    console.log(temp);
+</script>
+
+</body>
+</html>

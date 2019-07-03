@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function confirmEnding(str, target) {
+        // "Never give up and good luck will find you."
+        // -- Falcor
+        if(Object.prototype.toString.call(str).slice(8,-1) === "String"){
+            // console.log(str.substring(str.length - 1));
+            if(str.substring(str.length - target.length) === target){
+                return true;
+            }
+            return false;
+        }
+        return "请输入字符串来判断。";
+    }
+
+    console.log(confirmEnding("Bastian", "n"));
+</script>
+
+</body>
+</html>

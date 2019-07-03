@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function getIndexToIns(arr, num) {
+        // Find my place in this sorted array.
+        function sortNum(a,b){
+            return a-b;
+        }
+        arr.sort(sortNum);
+        // if(arr.length <= 0){return 0;}
+        // for(var i=0;i<arr.length;i++){
+        //     if(arr.length = 0){return 1;}
+        //     if(arr[i] < num && arr[i+1] > num ){
+        //         return num - arr[i] < arr[i+1] -num ? i : i+1;
+        //     }else if(arr[i] === num){
+        //         return i;
+        //     }else if(arr[arr.length - 1] < num){
+        //         return arr.length;
+        //     }
+        // }
+        for(var i=0;i<arr.length;i++){
+            if(arr[i] >= num){
+                return i;
+            }
+        }
+        return arr.length;
+    }
+    //console.log(getIndexToIns([40, 60], 50));
+    //console.log(getIndexToIns([3, 10, 5], 3));
+    //console.log(getIndexToIns([2, 5, 10], 15));
+    console.log(getIndexToIns([], 1));
+    console.log(getIndexToIns([5,8,20], 9));
+</script>
+
+</body>
+</html>
