@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function newBooks(label) {
+        //     console.log(label + ':' + this.name);
+        // }
+
+        // var book1 = {
+        //     name: 'JavaScript'
+        // }
+        // var book2 = {
+        //     name: 'HTML'
+        // }
+        // var name = 'CSS';
+
+        // var newBook1 = newBooks.bind(book1);
+        // newBook1('book1');
+
+        // var newBook2 = newBooks.bind(book2, 'book2');
+        // newBook2();
+
+        // book2.write = newBook1;
+        // book2.write();
+
+        var person = {
+            name: "tsrot",
+            age: 24,
+            sayHello: function(age) {
+                console.log(this.name);
+                console.log(age);
+            }
+        };
+        var son = {
+            name: "xieliqun"
+        };
+        // var boundFunc = person.sayHello.bind(son);
+        // boundFunc(25);
+
+        // var boundFunc = person.sayHello.bind(son, 25);
+        // boundFunc();
+
+        var boundFunc = person.sayHello.bind(son, 25);
+        boundFunc(30);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function newBooks(label) {
+            console.log(label + ':' + this.name);
+        }
+
+        var book1 = {
+            name: 'JavaScript'
+        }
+        var book2 = {
+            name: 'HTML'
+        }
+        var name = 'CSS';
+
+        newBooks.apply(this, ['global']);
+        newBooks.apply(book1, ['book1']);
+        newBooks.apply(book2, ['book2']);
+    </script>
+</body>
+
+</html>

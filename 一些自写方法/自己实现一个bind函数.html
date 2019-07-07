@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        Function.prototype.bind = function(obj, arg) {
+            var arg = Array.prototype.slice.call(arguments, 1);
+            console.log(arg);
+            var context = this;
+            return function newArg() {
+                arg = arg.concat(Array.prototype.slice.call(newArg));
+                return context.apply(obj, arg);
+            }
+        }
+
+        var book = {
+            name: 'JavaScript'
+        }
+
+        function changeBook(label) {
+            console.log(label + ':' + this.name);
+        }
+        //第一种执行方法
+        // var bookSell = changeBook.bind(book, 'book');
+        // bookSell();
+
+        var bookSell = changeBook.bind(book);
+        bookSell('book');
+    </script>
+</body>
+
+</html>
